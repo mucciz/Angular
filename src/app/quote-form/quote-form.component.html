@@ -1,0 +1,35 @@
+<div class="container tm-container">
+  <div class="row">
+    <form #quoteForm='ngForm' (ngSubmit)='submitQuote()'>
+      <!-- Name Form -->
+      <div class="form-group">
+        <label for="quote">Enter Quote:</label>
+        <textarea type="text" class="form-control" id="quote" rows="6" [(ngModel)]="newQuote.quote" name="quote"
+          #quote="ngModel" required></textarea>
+        <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+          <p>Field cannot be empty</p>
+        </div>
+      </div>
+      <!-- Author Input -->
+      <div class="form-group">
+        <label for="author">Quote Author:</label>
+        <input class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
+        <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+          <p>Field cannot be empty</p>
+      </div>
+      </div>
+      <br>
+      <!-- Publisher Input -->
+      <div class="form-group">
+        <label for="publisher">Published by:</label> <br>
+        <input class="form-control"type='text' id="publisher" [(ngModel)]="newQuote.publisher" name="publisher" #publisher="ngModel"
+          required>
+        <div [hidden]="publisher.valid || publisher.pristine" class="alert alert-danger">
+          <p>Field cannot be empty</p>
+        </div>
+      </div>
+      <br>
+      <button class="btn btn-success btn-lg " type="submit">Post Quote</button>
+    </form>
+  </div>
+</div>
