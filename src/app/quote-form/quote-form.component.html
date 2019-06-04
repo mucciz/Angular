@@ -29,7 +29,7 @@
         </div>
       </div>
       <br>
-      <button class="btn btn-success btn-lg " type="submit">Post Quote</button>
+      <button [disabled]="!quoteForm.form.valid" class="btn btn-success btn-lg " type="submit">Post Quote</button>
     </form>
   </div>
 </div>
